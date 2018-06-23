@@ -31,16 +31,22 @@ extension Reactive where Base: SKScene {
     
     // MARK:- SKSceneDelegate
     
-    // Reactive wrapper for delegate method `session(_ session: ARSession, didUpdate frame: ARFrame)`
-//    public var didUpdateFrame: ControlEvent<ARFrame> {
-//        let source = delegate
-//            .methodInvoked(#selector(ARSessionDelegate.session(_:didUpdate:) as ((ARSessionDelegate) -> (ARSession, ARFrame) -> Void)?))
-//            .map { value -> ARFrame in
-//                return try castOrThrow(ARFrame.self, value[1] as AnyObject)
-//        }
-//        return ControlEvent(events: source)
-//    }
-//
+//    optional public func update(_ currentTime: TimeInterval, for scene: SKScene)
+//    optional public func didEvaluateActions(for scene: SKScene)
+//    optional public func didSimulatePhysics(for scene: SKScene)
+//    optional public func didApplyConstraints(for scene: SKScene)
+//    optional public func didFinishUpdate(for scene: SKScene)
+    
+    // Reactive wrapper for delegate method `update(_ currentTime: TimeInterval, for scene: SKScene)`
+    public var updateCurrentTime: ControlEvent<TimeInterval> {
+        let source = delegate
+            .methodInvoked(#selector(SKSceneDelegate.update(_:for:)))
+            .map { value -> TimeInterval in
+                return try castOrThrow(TimeInterval.self, value[0] as AnyObject)
+        }
+        return ControlEvent(events: source)
+    }
+
     
     
     

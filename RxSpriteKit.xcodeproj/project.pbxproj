@@ -17,6 +17,8 @@
 		94E65B0220DE66C100E49D1B /* SKScene+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */; };
 		94E65B0420DE66CC00E49D1B /* SKView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */; };
 		94E65B0620DE66EF00E49D1B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0520DE66EF00E49D1B /* File.swift */; };
+		94E65B0E20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */; };
+		94E65B1020DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Rx.swift"; sourceTree = "<group>"; };
 		94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+Rx.swift"; sourceTree = "<group>"; };
 		94E65B0520DE66EF00E49D1B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSKPhysicsContactDelegateProxy.swift; sourceTree = "<group>"; };
+		94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKPhysicsWorld+Rx.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,10 @@
 		94E65A8D20DD721E00E49D1B /* RxSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */,
 				94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */,
 				94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */,
+				94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */,
 				94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */,
 				94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */,
 				94E65B0520DE66EF00E49D1B /* File.swift */,
@@ -269,7 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E65B0E20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift in Sources */,
 				94E65B0620DE66EF00E49D1B /* File.swift in Sources */,
+				94E65B1020DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift in Sources */,
 				94E65B0420DE66CC00E49D1B /* SKView+Rx.swift in Sources */,
 				94E65AFE20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift in Sources */,
 				94E65B0220DE66C100E49D1B /* SKScene+Rx.swift in Sources */,

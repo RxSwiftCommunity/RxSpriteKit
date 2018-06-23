@@ -12,6 +12,11 @@
 		94E65A9C20DD721E00E49D1B /* RxSpriteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 94E65A8E20DD721E00E49D1B /* RxSpriteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		94E65ADD20DD744100E49D1B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E65ADB20DD744100E49D1B /* RxCocoa.framework */; };
 		94E65ADE20DD744100E49D1B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E65ADC20DD744100E49D1B /* RxSwift.framework */; };
+		94E65AFE20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */; };
+		94E65B0020DE66B300E49D1B /* RxSKViewDelegate Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */; };
+		94E65B0220DE66C100E49D1B /* SKScene+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */; };
+		94E65B0420DE66CC00E49D1B /* SKView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */; };
+		94E65B0620DE66EF00E49D1B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0520DE66EF00E49D1B /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +42,11 @@
 		94E65AD020DD736400E49D1B /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		94E65ADB20DD744100E49D1B /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		94E65ADC20DD744100E49D1B /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSKSceneDelegateProxy.swift; sourceTree = "<group>"; };
+		94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSKViewDelegate Proxy.swift"; sourceTree = "<group>"; };
+		94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Rx.swift"; sourceTree = "<group>"; };
+		94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+Rx.swift"; sourceTree = "<group>"; };
+		94E65B0520DE66EF00E49D1B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,11 @@
 		94E65A8D20DD721E00E49D1B /* RxSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */,
+				94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */,
+				94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */,
+				94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */,
+				94E65B0520DE66EF00E49D1B /* File.swift */,
 				94E65A8E20DD721E00E49D1B /* RxSpriteKit.h */,
 				94E65A8F20DD721E00E49D1B /* Info.plist */,
 			);
@@ -174,6 +189,7 @@
 				TargetAttributes = {
 					94E65A8A20DD721E00E49D1B = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					94E65A9320DD721E00E49D1B = {
 						CreatedOnToolsVersion = 9.4;
@@ -253,6 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94E65B0620DE66EF00E49D1B /* File.swift in Sources */,
+				94E65B0420DE66CC00E49D1B /* SKView+Rx.swift in Sources */,
+				94E65AFE20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift in Sources */,
+				94E65B0220DE66C100E49D1B /* SKScene+Rx.swift in Sources */,
+				94E65B0020DE66B300E49D1B /* RxSKViewDelegate Proxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +419,7 @@
 		94E65AA020DD721E00E49D1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -418,6 +440,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RxSpriteKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -426,6 +449,7 @@
 		94E65AA120DD721E00E49D1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -454,6 +478,7 @@
 		94E65AA320DD721E00E49D1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RxSpriteKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,6 +496,7 @@
 		94E65AA420DD721E00E49D1B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RxSpriteKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

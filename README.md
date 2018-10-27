@@ -24,7 +24,7 @@ skScene
     .update
     .subscribe { event in
     switch event {
-        case .next(let shouldRenderAtTime):
+        case .next(let update):
             // TODO: ...
             break
         default:

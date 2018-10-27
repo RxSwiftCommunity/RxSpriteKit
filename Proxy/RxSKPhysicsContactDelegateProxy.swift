@@ -7,37 +7,53 @@
 //
 
 import SpriteKit
+#if !RX_NO_MODULE
 import RxSwift
 import RxCocoa
+#endif
+
+public typealias RxSKPhysicsContactDelegate = DelegateProxy<SKPhysicsWorld, SKPhysicsContactDelegate>
 
 extension SKPhysicsWorld: HasDelegate {
-    public var delegate: SKPhysicsContactDelegate? {
+    public typealias Delegate = SKPhysicsContactDelegate
+    
+    public var delegate: Delegate? {
         get {
             return self.contactDelegate
         }
-        set(newValue) {
+        set {
             self.contactDelegate = newValue
         }
     }
-    public typealias Delegate = SKPhysicsContactDelegate
 }
 
-open class RxSKPhysicsContactDelegateProxy:
-    DelegateProxy<SKPhysicsWorld, SKPhysicsContactDelegate>,
-    DelegateProxyType,
-    SKPhysicsContactDelegate {
+open class RxSKPhysicsContactDelegateProxy: RxSKPhysicsContactDelegate, DelegateProxyType, SKPhysicsContactDelegate {
     
-    /// Typed parent object.
-    public weak private(set) var world: SKPhysicsWorld?
+    /// Type of parent object
+    public weak private(set) var physicsWorld: SKPhysicsWorld?
     
-    /// - parameter view: Parent object for delegate proxy.
-    public init(world: ParentObject) {
-        self.world = world
-        super.init(parentObject: world, delegateProxy: RxSKPhysicsContactDelegateProxy.self)
+    /// Init with parentObject
+    public init(parentObject: ParentObject) {
+        physicsWorld = parentObject
+        super.init(parentObject: parentObject, delegateProxy: RxSKPhysicsContactDelegateProxy.self)
     }
     
-    // Register known implementationss
+    /// Register self to known implementations
     public static func registerKnownImplementations() {
-        self.register { RxSKPhysicsContactDelegateProxy(world: $0) }
+        self.register { parent -> RxSKPhysicsContactDelegateProxy in
+            RxSKPhysicsContactDelegateProxy(parentObject: parent)
+        }
     }
+    
+    /// Gets the current `SKPhysicsContactDelegate` on `SKPhysicsWorld`
+    open class func currentDelegate(for object: ParentObject) -> SKPhysicsContactDelegate? {
+        return object.delegate
+    }
+    
+    /// Set the `SKPhysicsContactDelegate` for `SKPhysicsWorld`
+    open class func setCurrentDelegate(_ delegate: SKPhysicsContactDelegate?, to object: ParentObject) {
+        object.delegate = delegate
+    }
+    
 }
+

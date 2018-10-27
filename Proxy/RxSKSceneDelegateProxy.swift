@@ -7,29 +7,43 @@
 //
 
 import SpriteKit
+#if !RX_NO_MODULE
 import RxSwift
 import RxCocoa
+#endif
+
+public typealias RxSKSceneDelegate = DelegateProxy<SKScene, SKSceneDelegate>
 
 extension SKScene: HasDelegate {
     public typealias Delegate = SKSceneDelegate
 }
 
-open class RxSKSceneDelegateProxy:
-    DelegateProxy<SKScene, SKSceneDelegate>,
-    DelegateProxyType,
-    SKSceneDelegate {
+open class RxSKSceneDelegateProxy: RxSKSceneDelegate, DelegateProxyType, SKSceneDelegate {
     
-    /// Typed parent object.
+    /// Type of parent object
     public weak private(set) var scene: SKScene?
     
-    /// - parameter view: Parent object for delegate proxy.
-    public init(scene: ParentObject) {
-        self.scene = scene
-        super.init(parentObject: scene, delegateProxy: RxSKSceneDelegateProxy.self)
+    /// Init with parentObject
+    public init(parentObject: ParentObject) {
+        scene = parentObject
+        super.init(parentObject: parentObject, delegateProxy: RxSKSceneDelegateProxy.self)
     }
     
-    // Register known implementationss
+    /// Register self to known implementations
     public static func registerKnownImplementations() {
-        self.register { RxSKSceneDelegateProxy(scene: $0) }
+        self.register { parent -> RxSKSceneDelegateProxy in
+            RxSKSceneDelegateProxy(parentObject: parent)
+        }
     }
+    
+    /// Gets the current `SKSceneDelegate` on `SKScene`
+    open class func currentDelegate(for object: ParentObject) -> SKSceneDelegate? {
+        return object.delegate
+    }
+    
+    /// Set the `SKSceneDelegate` for `SKScene`
+    open class func setCurrentDelegate(_ delegate: SKSceneDelegate?, to object: ParentObject) {
+        object.delegate = delegate
+    }
+    
 }

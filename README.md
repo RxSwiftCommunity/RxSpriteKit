@@ -7,10 +7,10 @@ Basic usage.
 
 skView.
     .rx
-    .didUpdateNodeForAnchor
+    .shouldRenderAtTime
     .subscribe { event in
         switch event {
-            case .next(let didUpdateNodeForAnchor):
+            case .next(let shouldRenderAtTime):
             // TODO: ...
         break
             default:
@@ -18,6 +18,37 @@ skView.
         }
     }
     .disposed(by: disposeBag)
+    
+skScene
+    .rx
+    .update
+    .subscribe { event in
+    switch event {
+        case .next(let shouldRenderAtTime):
+            // TODO: ...
+            break
+        default:
+            break
+        }
+    }
+    .disposed(by: disposeBag)
+    
+    
+physicsWorld
+    .rx
+    .didBeginContact
+    .subscribe { event in
+    switch event {
+        case .next(let didBeginContact):
+            // TODO: ...
+            break
+        default:
+            break
+        }
+    }
+    .disposed(by: disposeBag)
+    
+    
 ```
 
 Carthage setup.

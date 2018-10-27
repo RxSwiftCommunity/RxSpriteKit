@@ -12,31 +12,57 @@ import RxSwift
 import RxCocoa
 #endif
 
-extension Reactive where Base: ARSKView {
+import SpriteKit
+#if !RX_NO_MODULE
+import RxSwift
+import RxCocoa
+#endif
+
+extension Reactive where Base: SKScene {
     
-    // MARK: - SKViewDelegate
+    // MARK: - SKSceneDelegate
     
-    public var shouldRenderAtTime: ShouldRenderAtTime {
-        get {
-            return proxy?.shouldRenderAtTime ?? RxSKViewDelegateProxy.defaultShouldRenderAtTime
-        }
-        set {
-            proxy?.shouldRenderAtTime = newValue
-        }
+    public var update: ControlEvent<EventUpdate> {
+        let source: Observable<EventUpdate> = delegate
+            .methodInvoked(.update)
+            .map(toEventUpdate)
+        return ControlEvent(events: source)
     }
     
-    // MARK: - private
+    public var didEvaluateActions: ControlEvent<SKScene> {
+        let source: Observable<SKScene> = delegate
+            .methodInvoked(.didEvaluateActions)
+            .map(toSKScene)
+        return ControlEvent(events: source)
+    }
     
-    var proxy: RxSKViewDelegateProxy? {
-        return self.delegate as? RxSKViewDelegateProxy
+    public var didSimulatePhysics: ControlEvent<SKScene> {
+        let source: Observable<SKScene> = delegate
+            .methodInvoked(.didSimulatePhysics)
+            .map(toSKScene)
+        return ControlEvent(events: source)
+    }
+    
+    public var didApplyConstraints: ControlEvent<SKScene> {
+        let source: Observable<SKScene> = delegate
+            .methodInvoked(.didApplyConstraints)
+            .map(toSKScene)
+        return ControlEvent(events: source)
+    }
+    
+    public var didFinishUpdate: ControlEvent<SKScene> {
+        let source: Observable<SKScene> = delegate
+            .methodInvoked(.didFinishUpdate)
+            .map(toSKScene)
+        return ControlEvent(events: source)
     }
     
     // MARK: -
     
     /// Reactive wrapper for `delegate`.
     /// For more information take a look at `DelegateProxyType` protocol documentation.
-    public var delegate: DelegateProxy<ARSKView, ARSKViewDelegate> {
-        return RxSKViewDelegateProxy.proxy(for: base)
+    public var delegate: DelegateProxy<SKScene, SKSceneDelegate> {
+        return RxSKSceneDelegateProxy.proxy(for: base)
     }
     
     /// Installs delegate as forwarding delegate on `delegate`.
@@ -46,9 +72,9 @@ extension Reactive where Base: ARSKView {
     ///
     /// - parameter delegate: Delegate object.
     /// - returns: Disposable object that can be used to unbind the delegate.
-    public func setDelegate(_ delegate: SKViewDelegate)
+    public func setDelegate(_ delegate: SKSceneDelegate)
         -> Disposable {
-            return RxSKViewDelegateProxy.installForwardDelegate(delegate, retainDelegate: false, onProxyForObject: self.base)
+            return RxSKSceneDelegateProxy.installForwardDelegate(delegate, retainDelegate: false, onProxyForObject: self.base)
     }
     
 }

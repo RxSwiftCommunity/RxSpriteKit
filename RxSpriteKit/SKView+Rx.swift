@@ -7,10 +7,32 @@
 //
 
 import SpriteKit
+#if !RX_NO_MODULE
 import RxSwift
 import RxCocoa
+#endif
 
 extension Reactive where Base: SKView {
+    
+    // MARK: - SKViewDelegate
+    
+    public var shouldRenderAtTime: ShouldRenderAtTime {
+        get {
+            return proxy?.shouldRenderAtTime ?? RxSKViewDelegateProxy.defaultShouldRenderAtTime
+        }
+        set {
+            proxy?.shouldRenderAtTime = newValue
+        }
+    }
+    
+    // MARK: - private
+    
+    var proxy: RxSKViewDelegateProxy? {
+        return self.delegate as? RxSKViewDelegateProxy
+    }
+    
+    // MARK: -
+    
     /// Reactive wrapper for `delegate`.
     /// For more information take a look at `DelegateProxyType` protocol documentation.
     public var delegate: DelegateProxy<SKView, SKViewDelegate> {
@@ -20,7 +42,7 @@ extension Reactive where Base: SKView {
     /// Installs delegate as forwarding delegate on `delegate`.
     /// Delegate won't be retained.
     ///
-    /// It enables using normal delegate mechanism with reactive delegate mechanism.
+    /// It enables using normal delegKate mechanism with reactive delegate mechanism.
     ///
     /// - parameter delegate: Delegate object.
     /// - returns: Disposable object that can be used to unbind the delegate.
@@ -28,20 +50,5 @@ extension Reactive where Base: SKView {
         -> Disposable {
             return RxSKViewDelegateProxy.installForwardDelegate(delegate, retainDelegate: false, onProxyForObject: self.base)
     }
-    
-    // MARK:- SKSceneDelegate
-    
-    // Reactive wrapper for delegate method `session(_ session: ARSession, didUpdate frame: ARFrame)`
-    //    public var didUpdateFrame: ControlEvent<ARFrame> {
-    //        let source = delegate
-    //            .methodInvoked(#selector(ARSessionDelegate.session(_:didUpdate:) as ((ARSessionDelegate) -> (ARSession, ARFrame) -> Void)?))
-    //            .map { value -> ARFrame in
-    //                return try castOrThrow(ARFrame.self, value[1] as AnyObject)
-    //        }
-    //        return ControlEvent(events: source)
-    //    }
-    //
-    
-    
     
 }

@@ -16,9 +16,13 @@
 		94E65B0020DE66B300E49D1B /* RxSKViewDelegate Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */; };
 		94E65B0220DE66C100E49D1B /* SKScene+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */; };
 		94E65B0420DE66CC00E49D1B /* SKView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */; };
-		94E65B0620DE66EF00E49D1B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0520DE66EF00E49D1B /* File.swift */; };
 		94E65B0E20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */; };
 		94E65B1020DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */; };
+		94F13022218501C200EC279A /* Selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301D218501C000EC279A /* Selector.swift */; };
+		94F13023218501C200EC279A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301E218501C000EC279A /* Helper.swift */; };
+		94F13024218501C200EC279A /* Lambda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301F218501C100EC279A /* Lambda.swift */; };
+		94F13025218501C200EC279A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F13020218501C200EC279A /* Event.swift */; };
+		94F13026218501C200EC279A /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F13021218501C200EC279A /* Mapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +52,13 @@
 		94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxSKViewDelegate Proxy.swift"; sourceTree = "<group>"; };
 		94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Rx.swift"; sourceTree = "<group>"; };
 		94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKView+Rx.swift"; sourceTree = "<group>"; };
-		94E65B0520DE66EF00E49D1B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSKPhysicsContactDelegateProxy.swift; sourceTree = "<group>"; };
 		94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKPhysicsWorld+Rx.swift"; sourceTree = "<group>"; };
+		94F1301D218501C000EC279A /* Selector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Selector.swift; sourceTree = "<group>"; };
+		94F1301E218501C000EC279A /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		94F1301F218501C100EC279A /* Lambda.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lambda.swift; sourceTree = "<group>"; };
+		94F13020218501C200EC279A /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		94F13021218501C200EC279A /* Mapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +89,8 @@
 				94E65ACE20DD736400E49D1B /* Cartfile.resolved */,
 				94E65ACF20DD736400E49D1B /* LICENSE */,
 				94E65ACD20DD736400E49D1B /* README.md */,
+				94F1301C2185016D00EC279A /* Proxy */,
+				94F1301B2185016800EC279A /* Utility */,
 				94E65A8D20DD721E00E49D1B /* RxSpriteKit */,
 				94E65A9820DD721E00E49D1B /* RxSpriteKitTests */,
 				94E65A8C20DD721E00E49D1B /* Products */,
@@ -100,13 +110,9 @@
 		94E65A8D20DD721E00E49D1B /* RxSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
-				94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */,
-				94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */,
-				94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */,
 				94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */,
 				94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */,
 				94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */,
-				94E65B0520DE66EF00E49D1B /* File.swift */,
 				94E65A8E20DD721E00E49D1B /* RxSpriteKit.h */,
 				94E65A8F20DD721E00E49D1B /* Info.plist */,
 			);
@@ -129,6 +135,28 @@
 				94E65ADC20DD744100E49D1B /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94F1301B2185016800EC279A /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				94F13020218501C200EC279A /* Event.swift */,
+				94F1301E218501C000EC279A /* Helper.swift */,
+				94F1301F218501C100EC279A /* Lambda.swift */,
+				94F13021218501C200EC279A /* Mapper.swift */,
+				94F1301D218501C000EC279A /* Selector.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		94F1301C2185016D00EC279A /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */,
+				94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */,
+				94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */,
+			);
+			path = Proxy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,13 +303,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F13024218501C200EC279A /* Lambda.swift in Sources */,
 				94E65B0E20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift in Sources */,
-				94E65B0620DE66EF00E49D1B /* File.swift in Sources */,
 				94E65B1020DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift in Sources */,
 				94E65B0420DE66CC00E49D1B /* SKView+Rx.swift in Sources */,
+				94F13026218501C200EC279A /* Mapper.swift in Sources */,
+				94F13025218501C200EC279A /* Event.swift in Sources */,
 				94E65AFE20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift in Sources */,
 				94E65B0220DE66C100E49D1B /* SKScene+Rx.swift in Sources */,
 				94E65B0020DE66B300E49D1B /* RxSKViewDelegate Proxy.swift in Sources */,
+				94F13022218501C200EC279A /* Selector.swift in Sources */,
+				94F13023218501C200EC279A /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

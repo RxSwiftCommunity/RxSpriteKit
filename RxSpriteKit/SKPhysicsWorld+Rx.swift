@@ -42,7 +42,7 @@ extension Reactive where Base: SKPhysicsWorld {
     }
 
     // Reactive wrapper for delegate method `didEnd(_ contact: SKPhysicsContact)`
-    public var didUEndContact: ControlEvent<SKPhysicsContact> {
+    public var didEndContact: ControlEvent<SKPhysicsContact> {
         let source = delegate
             .methodInvoked(#selector(SKPhysicsContactDelegate.didEnd(_:)))
             .map { value -> SKPhysicsContact in

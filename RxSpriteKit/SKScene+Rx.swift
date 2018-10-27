@@ -7,47 +7,48 @@
 //
 
 import SpriteKit
+#if !RX_NO_MODULE
 import RxSwift
 import RxCocoa
+#endif
 
-extension Reactive where Base: SKScene {
+extension Reactive where Base: ARSKView {
+    
+    // MARK: - SKViewDelegate
+    
+    public var shouldRenderAtTime: ShouldRenderAtTime {
+        get {
+            return proxy?.shouldRenderAtTime ?? RxSKViewDelegateProxy.defaultShouldRenderAtTime
+        }
+        set {
+            proxy?.shouldRenderAtTime = newValue
+        }
+    }
+    
+    // MARK: - private
+    
+    var proxy: RxSKViewDelegateProxy? {
+        return self.delegate as? RxSKViewDelegateProxy
+    }
+    
+    // MARK: -
+    
     /// Reactive wrapper for `delegate`.
     /// For more information take a look at `DelegateProxyType` protocol documentation.
-    public var delegate: DelegateProxy<SKScene, SKSceneDelegate> {
-        return RxSKSceneDelegateProxy.proxy(for: base)
+    public var delegate: DelegateProxy<ARSKView, ARSKViewDelegate> {
+        return RxSKViewDelegateProxy.proxy(for: base)
     }
     
     /// Installs delegate as forwarding delegate on `delegate`.
     /// Delegate won't be retained.
     ///
-    /// It enables using normal delegate mechanism with reactive delegate mechanism.
+    /// It enables using normal delegKate mechanism with reactive delegate mechanism.
     ///
     /// - parameter delegate: Delegate object.
     /// - returns: Disposable object that can be used to unbind the delegate.
-    public func setDelegate(_ delegate: SKSceneDelegate)
+    public func setDelegate(_ delegate: SKViewDelegate)
         -> Disposable {
-            return RxSKSceneDelegateProxy.installForwardDelegate(delegate, retainDelegate: false, onProxyForObject: self.base)
+            return RxSKViewDelegateProxy.installForwardDelegate(delegate, retainDelegate: false, onProxyForObject: self.base)
     }
-    
-    // MARK:- SKSceneDelegate
-    
-//    optional public func update(_ currentTime: TimeInterval, for scene: SKScene)
-//    optional public func didEvaluateActions(for scene: SKScene)
-//    optional public func didSimulatePhysics(for scene: SKScene)
-//    optional public func didApplyConstraints(for scene: SKScene)
-//    optional public func didFinishUpdate(for scene: SKScene)
-    
-    // Reactive wrapper for delegate method `update(_ currentTime: TimeInterval, for scene: SKScene)`
-    public var updateCurrentTime: ControlEvent<TimeInterval> {
-        let source = delegate
-            .methodInvoked(#selector(SKSceneDelegate.update(_:for:)))
-            .map { value -> TimeInterval in
-                return try castOrThrow(TimeInterval.self, value[0] as AnyObject)
-        }
-        return ControlEvent(events: source)
-    }
-
-    
-    
     
 }

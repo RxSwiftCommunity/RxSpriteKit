@@ -10,4 +10,8 @@ import SpriteKit
 
 // MARK: - SKViewDelegate
 
+// MARK: - SKSceneDelegate
 
+public typealias EventUpdate = (currentTime: TimeInterval, scene: SKScene)
+
+//MARK: - SKPhysicsContactDelegate

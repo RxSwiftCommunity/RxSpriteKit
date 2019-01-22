@@ -2,8 +2,8 @@
 //  RxSKPhysicsContactDelegateProxy.swift
 //  RxSpriteKit
 //
-//  Created by Maxim Volgin on 23/06/2018.
-//  Copyright © 2018 Maxim Volgin. All rights reserved.
+//  Created by Daniel Tartaglia on 21 Jan 2019.
+//  Copyright © 2019 Daniel Tartaglia. MIT License.
 //
 
 import SpriteKit
@@ -12,48 +12,94 @@ import RxSwift
 import RxCocoa
 #endif
 
-public typealias RxSKPhysicsContactDelegate = DelegateProxy<SKPhysicsWorld, SKPhysicsContactDelegate>
+public
+extension Reactive where Base: SKPhysicsWorld {
 
-extension SKPhysicsWorld: HasDelegate {
-    public typealias Delegate = SKPhysicsContactDelegate
-    
-    public var delegate: Delegate? {
-        get {
-            return self.contactDelegate
+    public
+    var didBegin: Observable<SKPhysicsContact> {
+        return Observable.create { observer in
+            physicsContatctDelegatesLock.lock(); defer { physicsContatctDelegatesLock.unlock() }
+            let uuid = UUID()
+            if var (delegate, beginners, enders) = physicsContatctDelegates[self.base] {
+                beginners[uuid] = observer
+                physicsContatctDelegates[self.base] = (delegate, beginners, enders)
+            }
+            else {
+                let delegate = PhysicsContactDelegate(for: self.base)
+                self.base.contactDelegate = delegate
+                physicsContatctDelegates[self.base] = (delegate, [uuid: observer], [:])
+            }
+
+            return Disposables.create {
+                physicsContatctDelegatesLock.lock(); defer { physicsContatctDelegatesLock.unlock() }
+                var (delegate, beginners, enders) = physicsContatctDelegates[self.base]!
+                beginners.removeValue(forKey: uuid)
+                if beginners.isEmpty && enders.isEmpty {
+                    physicsContatctDelegates.removeValue(forKey: self.base)
+                }
+                else {
+                    physicsContatctDelegates[self.base] = (delegate, beginners, enders)
+                }
+            }
         }
-        set {
-            self.contactDelegate = newValue
+    }
+
+    public
+    var didEnd: Observable<SKPhysicsContact> {
+        return Observable.create { observer in
+            physicsContatctDelegatesLock.lock(); defer { physicsContatctDelegatesLock.unlock() }
+            let uuid = UUID()
+            if var (delegate, beginners, enders) = physicsContatctDelegates[self.base] {
+                enders[uuid] = observer
+                physicsContatctDelegates[self.base] = (delegate, beginners, enders)
+            }
+            else {
+                let delegate = PhysicsContactDelegate(for: self.base)
+                self.base.contactDelegate = delegate
+                physicsContatctDelegates[self.base] = (delegate, [:], [uuid: observer])
+            }
+
+            return Disposables.create {
+                physicsContatctDelegatesLock.lock(); defer { physicsContatctDelegatesLock.unlock() }
+                var (delegate, beginners, enders) = physicsContatctDelegates[self.base]!
+                enders.removeValue(forKey: uuid)
+                if beginners.isEmpty && enders.isEmpty {
+                    physicsContatctDelegates.removeValue(forKey: self.base)
+                }
+                else {
+                    physicsContatctDelegates[self.base] = (delegate, beginners, enders)
+                }
+            }
         }
     }
 }
 
-open class RxSKPhysicsContactDelegateProxy: RxSKPhysicsContactDelegate, DelegateProxyType, SKPhysicsContactDelegate {
-    
-    /// Type of parent object
-    public weak private(set) var physicsWorld: SKPhysicsWorld?
-    
-    /// Init with parentObject
-    public init(parentObject: ParentObject) {
-        physicsWorld = parentObject
-        super.init(parentObject: parentObject, delegateProxy: RxSKPhysicsContactDelegateProxy.self)
+private
+class PhysicsContactDelegate: NSObject, SKPhysicsContactDelegate {
+
+    init(for world: SKPhysicsWorld) {
+        self.world = world
+        super.init()
     }
-    
-    /// Register self to known implementations
-    public static func registerKnownImplementations() {
-        self.register { parent -> RxSKPhysicsContactDelegateProxy in
-            RxSKPhysicsContactDelegateProxy(parentObject: parent)
+
+    func didBegin(_ contact: SKPhysicsContact) {
+        physicsContatctDelegatesLock.lock(); defer { physicsContatctDelegatesLock.unlock() }
+        let (_, beginners, _) = physicsContatctDelegates[world]!
+        for each in beginners.values {
+            each.onNext(contact)
         }
     }
-    
-    /// Gets the current `SKPhysicsContactDelegate` on `SKPhysicsWorld`
-    open class func currentDelegate(for object: ParentObject) -> SKPhysicsContactDelegate? {
-        return object.delegate
+
+    func didEnd(_ contact: SKPhysicsContact) {
+        physicsContatctDelegatesLock.lock(); defer { physicsContatctDelegatesLock.unlock() }
+        let (_, _, enders) = physicsContatctDelegates[world]!
+        for each in enders.values {
+            each.onNext(contact)
+        }
     }
-    
-    /// Set the `SKPhysicsContactDelegate` for `SKPhysicsWorld`
-    open class func setCurrentDelegate(_ delegate: SKPhysicsContactDelegate?, to object: ParentObject) {
-        object.delegate = delegate
-    }
-    
+
+    let world: SKPhysicsWorld
 }
 
+private let physicsContatctDelegatesLock = NSRecursiveLock()
+private var physicsContatctDelegates: [SKPhysicsWorld: (SKPhysicsContactDelegate, [UUID: AnyObserver<SKPhysicsContact>], [UUID: AnyObserver<SKPhysicsContact>])] = [:]

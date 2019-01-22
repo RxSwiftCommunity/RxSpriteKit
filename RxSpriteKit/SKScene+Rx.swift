@@ -12,12 +12,6 @@ import RxSwift
 import RxCocoa
 #endif
 
-import SpriteKit
-#if !RX_NO_MODULE
-import RxSwift
-import RxCocoa
-#endif
-
 extension Reactive where Base: SKScene {
     
     // MARK: - SKSceneDelegate

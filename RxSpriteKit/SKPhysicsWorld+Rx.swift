@@ -2,8 +2,8 @@
 //  SKPhysicsWorld+Rx.swift
 //  RxSpriteKit
 //
-//  Created by Maxim Volgin on 23/06/2018.
-//  Copyright © 2018 Maxim Volgin. All rights reserved.
+//  Created by Daniel Tartaglia on 21 Jan 2019.
+//  Copyright © 2019 Daniel Tartaglia. MIT License.
 //
 
 import SpriteKit
@@ -12,42 +12,78 @@ import RxSwift
 import RxCocoa
 #endif
 
-extension Reactive where Base: SKPhysicsWorld {
-
-    // MARK: - SKPhysicsContactDelegate
+public extension Reactive where Base: SKPhysicsWorld {
     
-    public var didBeginContact: ControlEvent<SKPhysicsContact> {
-        let source: Observable<SKPhysicsContact> = delegate
-            .methodInvoked(.didBeginContact)
-            .map(toSKPhysicsContact)
-        return ControlEvent(events: source)
+    public var didBeginContact: Observable<SKPhysicsContact> {
+        
+        return Observable.create { observer in
+            
+            RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+            let uuid = UUID()
+            
+            if var (delegate, beginners, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] {
+                beginners[uuid] = observer
+                RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
+            }
+            else {
+                let delegate = RxPhysicsContactDelegateProxy(for: self.base)
+                self.base.contactDelegate = delegate
+                RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, [uuid: observer], [:])
+            }
+            
+            return Disposables.create {
+                
+                RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+                var (delegate, beginners, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base]!
+                beginners.removeValue(forKey: uuid)
+                
+                if beginners.isEmpty && enders.isEmpty {
+                    RxPhysicsContactDelegateProxy.physicsContactDelegates.removeValue(forKey: self.base)
+                }
+                else {
+                    RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
+                }
+                
+            }
+            
+        }
+        
     }
     
-    public var didEndContact: ControlEvent<SKPhysicsContact> {
-        let source: Observable<SKPhysicsContact> = delegate
-            .methodInvoked(.didEndContact)
-            .map(toSKPhysicsContact)
-        return ControlEvent(events: source)
-    }
-    
-    // MARK: -
-    
-    /// Reactive wrapper for `delegate`.
-    /// For more information take a look at `DelegateProxyType` protocol documentation.
-    public var delegate: DelegateProxy<SKPhysicsWorld, SKPhysicsContactDelegate> {
-        return RxSKPhysicsContactDelegateProxy.proxy(for: base)
-    }
-    
-    /// Installs delegate as forwarding delegate on `delegate`.
-    /// Delegate won't be retained.
-    ///
-    /// It enables using normal delegKate mechanism with reactive delegate mechanism.
-    ///
-    /// - parameter delegate: Delegate object.
-    /// - returns: Disposable object that can be used to unbind the delegate.
-    public func setDelegate(_ delegate: SKPhysicsContactDelegate)
-        -> Disposable {
-            return RxSKPhysicsContactDelegateProxy.installForwardDelegate(delegate, retainDelegate: false, onProxyForObject: self.base)
+    public var didEndContact: Observable<SKPhysicsContact> {
+        
+        return Observable.create { observer in
+            
+            RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+            let uuid = UUID()
+            
+            if var (delegate, beginners, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] {
+                enders[uuid] = observer
+                RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
+            }
+            else {
+                let delegate = RxPhysicsContactDelegateProxy(for: self.base)
+                self.base.contactDelegate = delegate
+                RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, [:], [uuid: observer])
+            }
+            
+            return Disposables.create {
+                
+                RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+                var (delegate, beginners, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base]!
+                enders.removeValue(forKey: uuid)
+                
+                if beginners.isEmpty && enders.isEmpty {
+                    RxPhysicsContactDelegateProxy.physicsContactDelegates.removeValue(forKey: self.base)
+                }
+                else {
+                    RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
+                }
+                
+            }
+            
+        }
+        
     }
     
 }

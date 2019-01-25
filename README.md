@@ -54,7 +54,7 @@ physicsWorld
 Carthage setup.
 
 ```
-github "maxvol/RxSpriteKit" ~> 0.0.2
+github "maxvol/RxSpriteKit" ~> 0.0.3
 
 ```
 

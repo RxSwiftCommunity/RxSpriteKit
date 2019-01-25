@@ -1,6 +1,8 @@
 # RxSpriteKit
 RxSpriteKit (based on RxSwift)
 
+See demo project RxSpriteGame (https://github.com/maxvol/RxSpriteGame) for reference.
+
 Basic usage.
 
 ```swift

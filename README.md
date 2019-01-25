@@ -7,19 +7,7 @@ Basic usage.
 
 ```swift
 
-skView.
-    .rx
-    .shouldRenderAtTime
-    .subscribe { event in
-        switch event {
-            case .next(let shouldRenderAtTime):
-            // TODO: ...
-        break
-            default:
-        break
-        }
-    }
-    .disposed(by: disposeBag)
+skView.rx.shouldRenderAtTime = { (view, time) -> Bool in true }
     
 skScene
     .rx

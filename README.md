@@ -36,15 +36,13 @@ physicsWorld
             break
         }
     }
-    .disposed(by: disposeBag)
-    
-    
+    .disposed(by: disposeBag)        
 ```
 
 Carthage setup.
 
 ```
-github "maxvol/RxSpriteKit" ~> 0.0.3
+github "maxvol/RxSpriteKit" ~> 0.1.0
 
 ```
 

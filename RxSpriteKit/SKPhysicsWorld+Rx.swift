@@ -18,30 +18,30 @@ public extension Reactive where Base: SKPhysicsWorld {
         
         return Observable.create { observer in
             
-            RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+            RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
             let uuid = UUID()
             
-            if var (delegate, beginners, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] {
+            if var (delegate, beginners, enders) = RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base] {
                 beginners[uuid] = observer
-                RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
+                RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
             }
             else {
-                let delegate = RxPhysicsContactDelegateProxy(for: self.base)
+                let delegate = RxSKPhysicsContactDelegateProxy(for: self.base)
                 self.base.contactDelegate = delegate
-                RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, [uuid: observer], [:])
+                RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, [uuid: observer], [:])
             }
             
             return Disposables.create {
                 
-                RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
-                var (delegate, beginners, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base]!
+                RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+                var (delegate, beginners, enders) = RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base]!
                 beginners.removeValue(forKey: uuid)
                 
                 if beginners.isEmpty && enders.isEmpty {
-                    RxPhysicsContactDelegateProxy.physicsContactDelegates.removeValue(forKey: self.base)
+                    RxSKPhysicsContactDelegateProxy.physicsContactDelegates.removeValue(forKey: self.base)
                 }
                 else {
-                    RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
+                    RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
                 }
                 
             }
@@ -54,30 +54,30 @@ public extension Reactive where Base: SKPhysicsWorld {
         
         return Observable.create { observer in
             
-            RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+            RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
             let uuid = UUID()
             
-            if var (delegate, beginners, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] {
+            if var (delegate, beginners, enders) = RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base] {
                 enders[uuid] = observer
-                RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
+                RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
             }
             else {
-                let delegate = RxPhysicsContactDelegateProxy(for: self.base)
+                let delegate = RxSKPhysicsContactDelegateProxy(for: self.base)
                 self.base.contactDelegate = delegate
-                RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, [:], [uuid: observer])
+                RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, [:], [uuid: observer])
             }
             
             return Disposables.create {
                 
-                RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
-                var (delegate, beginners, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base]!
+                RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+                var (delegate, beginners, enders) = RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base]!
                 enders.removeValue(forKey: uuid)
                 
                 if beginners.isEmpty && enders.isEmpty {
-                    RxPhysicsContactDelegateProxy.physicsContactDelegates.removeValue(forKey: self.base)
+                    RxSKPhysicsContactDelegateProxy.physicsContactDelegates.removeValue(forKey: self.base)
                 }
                 else {
-                    RxPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
+                    RxSKPhysicsContactDelegateProxy.physicsContactDelegates[self.base] = (delegate, beginners, enders)
                 }
                 
             }

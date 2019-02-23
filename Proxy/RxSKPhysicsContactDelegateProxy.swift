@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 #endif
 
-class RxPhysicsContactDelegateProxy: NSObject, SKPhysicsContactDelegate {
+class RxSKPhysicsContactDelegateProxy: NSObject, SKPhysicsContactDelegate {
     
     static var physicsContactDelegates: [SKPhysicsWorld: (SKPhysicsContactDelegate, [UUID: AnyObserver<SKPhysicsContact>], [UUID: AnyObserver<SKPhysicsContact>])] = [:]
     static let physicsContactDelegatesLock = NSRecursiveLock()
@@ -26,8 +26,8 @@ class RxPhysicsContactDelegateProxy: NSObject, SKPhysicsContactDelegate {
 
     func didBegin(_ contact: SKPhysicsContact) {
         
-        RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
-        let (_, beginners, _) = RxPhysicsContactDelegateProxy.physicsContactDelegates[world]!
+        RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+        let (_, beginners, _) = RxSKPhysicsContactDelegateProxy.physicsContactDelegates[world]!
         
         for each in beginners.values {
             each.onNext(contact)
@@ -37,8 +37,8 @@ class RxPhysicsContactDelegateProxy: NSObject, SKPhysicsContactDelegate {
 
     func didEnd(_ contact: SKPhysicsContact) {
         
-        RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
-        let (_, _, enders) = RxPhysicsContactDelegateProxy.physicsContactDelegates[world]!
+        RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.lock(); defer { RxSKPhysicsContactDelegateProxy.physicsContactDelegatesLock.unlock() }
+        let (_, _, enders) = RxSKPhysicsContactDelegateProxy.physicsContactDelegates[world]!
         
         for each in enders.values {
             each.onNext(contact)

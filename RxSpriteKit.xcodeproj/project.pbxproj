@@ -7,41 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		94E65A9520DD721E00E49D1B /* RxSpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E65A8B20DD721E00E49D1B /* RxSpriteKit.framework */; };
-		94E65A9A20DD721E00E49D1B /* RxSpriteKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65A9920DD721E00E49D1B /* RxSpriteKitTests.swift */; };
-		94E65A9C20DD721E00E49D1B /* RxSpriteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 94E65A8E20DD721E00E49D1B /* RxSpriteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		94E65ADD20DD744100E49D1B /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E65ADB20DD744100E49D1B /* RxCocoa.framework */; };
-		94E65ADE20DD744100E49D1B /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E65ADC20DD744100E49D1B /* RxSwift.framework */; };
-		94E65AFE20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */; };
-		94E65B0020DE66B300E49D1B /* RxSKViewDelegate Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */; };
-		94E65B0220DE66C100E49D1B /* SKScene+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */; };
-		94E65B0420DE66CC00E49D1B /* SKView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */; };
-		94E65B0E20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */; };
-		94E65B1020DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */; };
-		94F13022218501C200EC279A /* Selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301D218501C000EC279A /* Selector.swift */; };
-		94F13023218501C200EC279A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301E218501C000EC279A /* Helper.swift */; };
-		94F13024218501C200EC279A /* Lambda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301F218501C100EC279A /* Lambda.swift */; };
-		94F13025218501C200EC279A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F13020218501C200EC279A /* Event.swift */; };
-		94F13026218501C200EC279A /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F13021218501C200EC279A /* Mapper.swift */; };
+		94117A072221253900852B53 /* RxSpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 941179FE2221253800852B53 /* RxSpriteKit.framework */; };
+		94117A0C2221253900852B53 /* macOS_RxSpriteKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94117A0B2221253900852B53 /* macOS_RxSpriteKitTests.swift */; };
+		94117A0E2221253900852B53 /* macOS_RxSpriteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 94117A002221253800852B53 /* macOS_RxSpriteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94117A232221255000852B53 /* RxSpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94117A1A2221254F00852B53 /* RxSpriteKit.framework */; };
+		94117A282221255000852B53 /* iOS_RxSpriteKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94117A272221255000852B53 /* iOS_RxSpriteKitTests.swift */; };
+		94117A2A2221255000852B53 /* iOS_RxSpriteKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 94117A1C2221255000852B53 /* iOS_RxSpriteKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94117A312221261B00852B53 /* RxSKPhysicsContactDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */; };
+		94117A322221261B00852B53 /* RxSKSceneDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */; };
+		94117A332221261B00852B53 /* RxSKViewDelegate Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */; };
+		94117A342221262200852B53 /* RxSKPhysicsContactDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0D20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift */; };
+		94117A352221262200852B53 /* RxSKSceneDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFD20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift */; };
+		94117A362221262200852B53 /* RxSKViewDelegate Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65AFF20DE66B300E49D1B /* RxSKViewDelegate Proxy.swift */; };
+		94117A372221262B00852B53 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F13020218501C200EC279A /* Event.swift */; };
+		94117A382221262B00852B53 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301E218501C000EC279A /* Helper.swift */; };
+		94117A392221262B00852B53 /* Lambda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301F218501C100EC279A /* Lambda.swift */; };
+		94117A3A2221262B00852B53 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F13021218501C200EC279A /* Mapper.swift */; };
+		94117A3B2221262B00852B53 /* Selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301D218501C000EC279A /* Selector.swift */; };
+		94117A3C2221262C00852B53 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F13020218501C200EC279A /* Event.swift */; };
+		94117A3D2221262C00852B53 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301E218501C000EC279A /* Helper.swift */; };
+		94117A3E2221262C00852B53 /* Lambda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301F218501C100EC279A /* Lambda.swift */; };
+		94117A3F2221262C00852B53 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F13021218501C200EC279A /* Mapper.swift */; };
+		94117A402221262C00852B53 /* Selector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1301D218501C000EC279A /* Selector.swift */; };
+		94117A412221263600852B53 /* SKPhysicsWorld+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */; };
+		94117A422221263600852B53 /* SKScene+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */; };
+		94117A432221263600852B53 /* SKView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */; };
+		94117A442221263700852B53 /* SKPhysicsWorld+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */; };
+		94117A452221263700852B53 /* SKScene+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */; };
+		94117A462221263700852B53 /* SKView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */; };
+		94117AAB22212C3200852B53 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E65ADB20DD744100E49D1B /* RxCocoa.framework */; };
+		94117AAC22212C3200852B53 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E65ADC20DD744100E49D1B /* RxSwift.framework */; };
+		94117AAF22212C4900852B53 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94117AAD22212C4900852B53 /* RxSwift.framework */; };
+		94117AB022212C4900852B53 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94117AAE22212C4900852B53 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		94E65A9620DD721E00E49D1B /* PBXContainerItemProxy */ = {
+		94117A082221253900852B53 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 94E65A8220DD721E00E49D1B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 94E65A8A20DD721E00E49D1B;
-			remoteInfo = RxSpriteKit;
+			remoteGlobalIDString = 941179FD2221253800852B53;
+			remoteInfo = macOS_RxSpriteKit;
+		};
+		94117A242221255000852B53 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94E65A8220DD721E00E49D1B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94117A192221254F00852B53;
+			remoteInfo = iOS_RxSpriteKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		94E65A8B20DD721E00E49D1B /* RxSpriteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSpriteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		94E65A8E20DD721E00E49D1B /* RxSpriteKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxSpriteKit.h; sourceTree = "<group>"; };
-		94E65A8F20DD721E00E49D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		94E65A9420DD721E00E49D1B /* RxSpriteKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxSpriteKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		94E65A9920DD721E00E49D1B /* RxSpriteKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSpriteKitTests.swift; sourceTree = "<group>"; };
-		94E65A9B20DD721E00E49D1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		941179FE2221253800852B53 /* RxSpriteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSpriteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94117A002221253800852B53 /* macOS_RxSpriteKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macOS_RxSpriteKit.h; sourceTree = "<group>"; };
+		94117A012221253800852B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94117A062221253900852B53 /* macOS_RxSpriteKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = macOS_RxSpriteKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94117A0B2221253900852B53 /* macOS_RxSpriteKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOS_RxSpriteKitTests.swift; sourceTree = "<group>"; };
+		94117A0D2221253900852B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94117A1A2221254F00852B53 /* RxSpriteKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSpriteKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94117A1C2221255000852B53 /* iOS_RxSpriteKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOS_RxSpriteKit.h; sourceTree = "<group>"; };
+		94117A1D2221255000852B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94117A222221255000852B53 /* iOS_RxSpriteKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_RxSpriteKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		94117A272221255000852B53 /* iOS_RxSpriteKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_RxSpriteKitTests.swift; sourceTree = "<group>"; };
+		94117A292221255000852B53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94117AAD22212C4900852B53 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../../Carthage/Build/Mac/RxSwift.framework; sourceTree = "<group>"; };
+		94117AAE22212C4900852B53 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../../Carthage/Build/Mac/RxCocoa.framework; sourceTree = "<group>"; };
 		94E65ACD20DD736400E49D1B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		94E65ACE20DD736400E49D1B /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		94E65ACF20DD736400E49D1B /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -62,26 +93,79 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		94E65A8720DD721E00E49D1B /* Frameworks */ = {
+		941179FB2221253800852B53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E65ADD20DD744100E49D1B /* RxCocoa.framework in Frameworks */,
-				94E65ADE20DD744100E49D1B /* RxSwift.framework in Frameworks */,
+				94117AAF22212C4900852B53 /* RxSwift.framework in Frameworks */,
+				94117AB022212C4900852B53 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94E65A9120DD721E00E49D1B /* Frameworks */ = {
+		94117A032221253900852B53 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E65A9520DD721E00E49D1B /* RxSpriteKit.framework in Frameworks */,
+				94117A072221253900852B53 /* RxSpriteKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94117A172221254F00852B53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94117AAB22212C3200852B53 /* RxCocoa.framework in Frameworks */,
+				94117AAC22212C3200852B53 /* RxSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94117A1F2221255000852B53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94117A232221255000852B53 /* RxSpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941179FF2221253800852B53 /* macOS_RxSpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+				94117A002221253800852B53 /* macOS_RxSpriteKit.h */,
+				94117A012221253800852B53 /* Info.plist */,
+			);
+			path = macOS_RxSpriteKit;
+			sourceTree = "<group>";
+		};
+		94117A0A2221253900852B53 /* macOS_RxSpriteKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				94117A0B2221253900852B53 /* macOS_RxSpriteKitTests.swift */,
+				94117A0D2221253900852B53 /* Info.plist */,
+			);
+			path = macOS_RxSpriteKitTests;
+			sourceTree = "<group>";
+		};
+		94117A1B2221255000852B53 /* iOS_RxSpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+				94117A1C2221255000852B53 /* iOS_RxSpriteKit.h */,
+				94117A1D2221255000852B53 /* Info.plist */,
+			);
+			path = iOS_RxSpriteKit;
+			sourceTree = "<group>";
+		};
+		94117A262221255000852B53 /* iOS_RxSpriteKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				94117A272221255000852B53 /* iOS_RxSpriteKitTests.swift */,
+				94117A292221255000852B53 /* Info.plist */,
+			);
+			path = iOS_RxSpriteKitTests;
+			sourceTree = "<group>";
+		};
 		94E65A8120DD721E00E49D1B = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +176,10 @@
 				94F1301C2185016D00EC279A /* Proxy */,
 				94F1301B2185016800EC279A /* Utility */,
 				94E65A8D20DD721E00E49D1B /* RxSpriteKit */,
-				94E65A9820DD721E00E49D1B /* RxSpriteKitTests */,
+				941179FF2221253800852B53 /* macOS_RxSpriteKit */,
+				94117A0A2221253900852B53 /* macOS_RxSpriteKitTests */,
+				94117A1B2221255000852B53 /* iOS_RxSpriteKit */,
+				94117A262221255000852B53 /* iOS_RxSpriteKitTests */,
 				94E65A8C20DD721E00E49D1B /* Products */,
 				94E65ADA20DD744000E49D1B /* Frameworks */,
 			);
@@ -101,8 +188,10 @@
 		94E65A8C20DD721E00E49D1B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				94E65A8B20DD721E00E49D1B /* RxSpriteKit.framework */,
-				94E65A9420DD721E00E49D1B /* RxSpriteKitTests.xctest */,
+				941179FE2221253800852B53 /* RxSpriteKit.framework */,
+				94117A062221253900852B53 /* macOS_RxSpriteKitTests.xctest */,
+				94117A1A2221254F00852B53 /* RxSpriteKit.framework */,
+				94117A222221255000852B53 /* iOS_RxSpriteKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,24 +202,15 @@
 				94E65B0F20DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift */,
 				94E65B0120DE66C100E49D1B /* SKScene+Rx.swift */,
 				94E65B0320DE66CC00E49D1B /* SKView+Rx.swift */,
-				94E65A8E20DD721E00E49D1B /* RxSpriteKit.h */,
-				94E65A8F20DD721E00E49D1B /* Info.plist */,
 			);
 			path = RxSpriteKit;
-			sourceTree = "<group>";
-		};
-		94E65A9820DD721E00E49D1B /* RxSpriteKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				94E65A9920DD721E00E49D1B /* RxSpriteKitTests.swift */,
-				94E65A9B20DD721E00E49D1B /* Info.plist */,
-			);
-			path = RxSpriteKitTests;
 			sourceTree = "<group>";
 		};
 		94E65ADA20DD744000E49D1B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94117AAE22212C4900852B53 /* RxCocoa.framework */,
+				94117AAD22212C4900852B53 /* RxSwift.framework */,
 				94E65ADB20DD744100E49D1B /* RxCocoa.framework */,
 				94E65ADC20DD744100E49D1B /* RxSwift.framework */,
 			);
@@ -162,53 +242,99 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		94E65A8820DD721E00E49D1B /* Headers */ = {
+		941179F92221253800852B53 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E65A9C20DD721E00E49D1B /* RxSpriteKit.h in Headers */,
+				94117A0E2221253900852B53 /* macOS_RxSpriteKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94117A152221254F00852B53 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94117A2A2221255000852B53 /* iOS_RxSpriteKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		94E65A8A20DD721E00E49D1B /* RxSpriteKit */ = {
+		941179FD2221253800852B53 /* macOS_RxSpriteKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94E65A9F20DD721E00E49D1B /* Build configuration list for PBXNativeTarget "RxSpriteKit" */;
+			buildConfigurationList = 94117A0F2221253900852B53 /* Build configuration list for PBXNativeTarget "macOS_RxSpriteKit" */;
 			buildPhases = (
-				94E65A8620DD721E00E49D1B /* Sources */,
-				94E65A8720DD721E00E49D1B /* Frameworks */,
-				94E65A8820DD721E00E49D1B /* Headers */,
-				94E65A8920DD721E00E49D1B /* Resources */,
-				94E65AE420DD747400E49D1B /* Carthage */,
-				94E65AE520DD747700E49D1B /* Delete Nested Framework(s) */,
+				941179F92221253800852B53 /* Headers */,
+				941179FA2221253800852B53 /* Sources */,
+				941179FB2221253800852B53 /* Frameworks */,
+				941179FC2221253800852B53 /* Resources */,
+				94117AB122212C5600852B53 /* Carthage */,
+				94117AB222212C5800852B53 /* Delete Nested Framework(s) */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = RxSpriteKit;
-			productName = RxSpriteKit;
-			productReference = 94E65A8B20DD721E00E49D1B /* RxSpriteKit.framework */;
+			name = macOS_RxSpriteKit;
+			productName = macOS_RxSpriteKit;
+			productReference = 941179FE2221253800852B53 /* RxSpriteKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		94E65A9320DD721E00E49D1B /* RxSpriteKitTests */ = {
+		94117A052221253900852B53 /* macOS_RxSpriteKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94E65AA220DD721E00E49D1B /* Build configuration list for PBXNativeTarget "RxSpriteKitTests" */;
+			buildConfigurationList = 94117A122221253900852B53 /* Build configuration list for PBXNativeTarget "macOS_RxSpriteKitTests" */;
 			buildPhases = (
-				94E65A9020DD721E00E49D1B /* Sources */,
-				94E65A9120DD721E00E49D1B /* Frameworks */,
-				94E65A9220DD721E00E49D1B /* Resources */,
+				94117A022221253900852B53 /* Sources */,
+				94117A032221253900852B53 /* Frameworks */,
+				94117A042221253900852B53 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				94E65A9720DD721E00E49D1B /* PBXTargetDependency */,
+				94117A092221253900852B53 /* PBXTargetDependency */,
 			);
-			name = RxSpriteKitTests;
-			productName = RxSpriteKitTests;
-			productReference = 94E65A9420DD721E00E49D1B /* RxSpriteKitTests.xctest */;
+			name = macOS_RxSpriteKitTests;
+			productName = macOS_RxSpriteKitTests;
+			productReference = 94117A062221253900852B53 /* macOS_RxSpriteKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		94117A192221254F00852B53 /* iOS_RxSpriteKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94117A2B2221255000852B53 /* Build configuration list for PBXNativeTarget "iOS_RxSpriteKit" */;
+			buildPhases = (
+				94117A152221254F00852B53 /* Headers */,
+				94117A162221254F00852B53 /* Sources */,
+				94117A172221254F00852B53 /* Frameworks */,
+				94117A182221254F00852B53 /* Resources */,
+				94117AB322212C7100852B53 /* Carthage */,
+				94117AB422212C7300852B53 /* Delete Nested Framework(s) */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iOS_RxSpriteKit;
+			productName = iOS_RxSpriteKit;
+			productReference = 94117A1A2221254F00852B53 /* RxSpriteKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		94117A212221255000852B53 /* iOS_RxSpriteKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94117A2E2221255000852B53 /* Build configuration list for PBXNativeTarget "iOS_RxSpriteKitTests" */;
+			buildPhases = (
+				94117A1E2221255000852B53 /* Sources */,
+				94117A1F2221255000852B53 /* Frameworks */,
+				94117A202221255000852B53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94117A252221255000852B53 /* PBXTargetDependency */,
+			);
+			name = iOS_RxSpriteKitTests;
+			productName = iOS_RxSpriteKitTests;
+			productReference = 94117A222221255000852B53 /* iOS_RxSpriteKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -217,17 +343,21 @@
 		94E65A8220DD721E00E49D1B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Maxim Volgin";
 				TargetAttributes = {
-					94E65A8A20DD721E00E49D1B = {
-						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1010;
+					941179FD2221253800852B53 = {
+						CreatedOnToolsVersion = 10.1;
 					};
-					94E65A9320DD721E00E49D1B = {
-						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 1010;
+					94117A052221253900852B53 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					94117A192221254F00852B53 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					94117A212221255000852B53 = {
+						CreatedOnToolsVersion = 10.1;
 					};
 				};
 			};
@@ -243,21 +373,37 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				94E65A8A20DD721E00E49D1B /* RxSpriteKit */,
-				94E65A9320DD721E00E49D1B /* RxSpriteKitTests */,
+				94117A192221254F00852B53 /* iOS_RxSpriteKit */,
+				94117A212221255000852B53 /* iOS_RxSpriteKitTests */,
+				941179FD2221253800852B53 /* macOS_RxSpriteKit */,
+				94117A052221253900852B53 /* macOS_RxSpriteKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		94E65A8920DD721E00E49D1B /* Resources */ = {
+		941179FC2221253800852B53 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94E65A9220DD721E00E49D1B /* Resources */ = {
+		94117A042221253900852B53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94117A182221254F00852B53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94117A202221255000852B53 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,76 +413,361 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		94E65AE420DD747400E49D1B /* Carthage */ = {
+		94117AB122212C5600852B53 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/RxCocoa.framework",
 			);
 			name = Carthage;
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
-		94E65AE520DD747700E49D1B /* Delete Nested Framework(s) */ = {
+		94117AB222212C5800852B53 /* Delete Nested Framework(s) */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
 			name = "Delete Nested Framework(s)";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\n    rm -fr Frameworks\nfi\n";
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi\n";
+		};
+		94117AB322212C7100852B53 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+		94117AB422212C7300852B53 /* Delete Nested Framework(s) */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Delete Nested Framework(s)";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/\"\nif [[ -d \"Frameworks\" ]]; then\nrm -fr Frameworks\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		94E65A8620DD721E00E49D1B /* Sources */ = {
+		941179FA2221253800852B53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94F13024218501C200EC279A /* Lambda.swift in Sources */,
-				94E65B0E20DE6B7000E49D1B /* RxSKPhysicsContactDelegateProxy.swift in Sources */,
-				94E65B1020DE6BEE00E49D1B /* SKPhysicsWorld+Rx.swift in Sources */,
-				94E65B0420DE66CC00E49D1B /* SKView+Rx.swift in Sources */,
-				94F13026218501C200EC279A /* Mapper.swift in Sources */,
-				94F13025218501C200EC279A /* Event.swift in Sources */,
-				94E65AFE20DE66A100E49D1B /* RxSKSceneDelegateProxy.swift in Sources */,
-				94E65B0220DE66C100E49D1B /* SKScene+Rx.swift in Sources */,
-				94E65B0020DE66B300E49D1B /* RxSKViewDelegate Proxy.swift in Sources */,
-				94F13022218501C200EC279A /* Selector.swift in Sources */,
-				94F13023218501C200EC279A /* Helper.swift in Sources */,
+				94117A412221263600852B53 /* SKPhysicsWorld+Rx.swift in Sources */,
+				94117A392221262B00852B53 /* Lambda.swift in Sources */,
+				94117A422221263600852B53 /* SKScene+Rx.swift in Sources */,
+				94117A372221262B00852B53 /* Event.swift in Sources */,
+				94117A3B2221262B00852B53 /* Selector.swift in Sources */,
+				94117A3A2221262B00852B53 /* Mapper.swift in Sources */,
+				94117A322221261B00852B53 /* RxSKSceneDelegateProxy.swift in Sources */,
+				94117A382221262B00852B53 /* Helper.swift in Sources */,
+				94117A432221263600852B53 /* SKView+Rx.swift in Sources */,
+				94117A332221261B00852B53 /* RxSKViewDelegate Proxy.swift in Sources */,
+				94117A312221261B00852B53 /* RxSKPhysicsContactDelegateProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		94E65A9020DD721E00E49D1B /* Sources */ = {
+		94117A022221253900852B53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94E65A9A20DD721E00E49D1B /* RxSpriteKitTests.swift in Sources */,
+				94117A0C2221253900852B53 /* macOS_RxSpriteKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94117A162221254F00852B53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94117A442221263700852B53 /* SKPhysicsWorld+Rx.swift in Sources */,
+				94117A3E2221262C00852B53 /* Lambda.swift in Sources */,
+				94117A452221263700852B53 /* SKScene+Rx.swift in Sources */,
+				94117A3C2221262C00852B53 /* Event.swift in Sources */,
+				94117A402221262C00852B53 /* Selector.swift in Sources */,
+				94117A3F2221262C00852B53 /* Mapper.swift in Sources */,
+				94117A352221262200852B53 /* RxSKSceneDelegateProxy.swift in Sources */,
+				94117A3D2221262C00852B53 /* Helper.swift in Sources */,
+				94117A462221263700852B53 /* SKView+Rx.swift in Sources */,
+				94117A362221262200852B53 /* RxSKViewDelegate Proxy.swift in Sources */,
+				94117A342221262200852B53 /* RxSKPhysicsContactDelegateProxy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94117A1E2221255000852B53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94117A282221255000852B53 /* iOS_RxSpriteKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		94E65A9720DD721E00E49D1B /* PBXTargetDependency */ = {
+		94117A092221253900852B53 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 94E65A8A20DD721E00E49D1B /* RxSpriteKit */;
-			targetProxy = 94E65A9620DD721E00E49D1B /* PBXContainerItemProxy */;
+			target = 941179FD2221253800852B53 /* macOS_RxSpriteKit */;
+			targetProxy = 94117A082221253900852B53 /* PBXContainerItemProxy */;
+		};
+		94117A252221255000852B53 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94117A192221254F00852B53 /* iOS_RxSpriteKit */;
+			targetProxy = 94117A242221255000852B53 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		94117A102221253900852B53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = macOS_RxSpriteKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.macOS-RxSpriteKit";
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		94117A112221253900852B53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = macOS_RxSpriteKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.macOS-RxSpriteKit";
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		94117A132221253900852B53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = macOS_RxSpriteKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.macOS-RxSpriteKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		94117A142221253900852B53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = macOS_RxSpriteKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.macOS-RxSpriteKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		94117A2C2221255000852B53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = iOS_RxSpriteKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.iOS-RxSpriteKit";
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94117A2D2221255000852B53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = iOS_RxSpriteKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.iOS-RxSpriteKit";
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		94117A2F2221255000852B53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iOS_RxSpriteKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.iOS-RxSpriteKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		94117A302221255000852B53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = iOS_RxSpriteKitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "maxvol.iOS-RxSpriteKitTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		94E65A9D20DD721E00E49D1B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -390,6 +821,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -447,6 +879,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -457,129 +890,50 @@
 			};
 			name = Release;
 		};
-		94E65AA020DD721E00E49D1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = RxSpriteKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RxSpriteKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		94E65AA120DD721E00E49D1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = RxSpriteKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RxSpriteKit;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		94E65AA320DD721E00E49D1B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = RxSpriteKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RxSpriteKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		94E65AA420DD721E00E49D1B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = RxSpriteKitTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = maxvol.RxSpriteKitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		94117A0F2221253900852B53 /* Build configuration list for PBXNativeTarget "macOS_RxSpriteKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94117A102221253900852B53 /* Debug */,
+				94117A112221253900852B53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94117A122221253900852B53 /* Build configuration list for PBXNativeTarget "macOS_RxSpriteKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94117A132221253900852B53 /* Debug */,
+				94117A142221253900852B53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94117A2B2221255000852B53 /* Build configuration list for PBXNativeTarget "iOS_RxSpriteKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94117A2C2221255000852B53 /* Debug */,
+				94117A2D2221255000852B53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94117A2E2221255000852B53 /* Build configuration list for PBXNativeTarget "iOS_RxSpriteKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94117A2F2221255000852B53 /* Debug */,
+				94117A302221255000852B53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		94E65A8520DD721E00E49D1B /* Build configuration list for PBXProject "RxSpriteKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				94E65A9D20DD721E00E49D1B /* Debug */,
 				94E65A9E20DD721E00E49D1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		94E65A9F20DD721E00E49D1B /* Build configuration list for PBXNativeTarget "RxSpriteKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				94E65AA020DD721E00E49D1B /* Debug */,
-				94E65AA120DD721E00E49D1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		94E65AA220DD721E00E49D1B /* Build configuration list for PBXNativeTarget "RxSpriteKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				94E65AA320DD721E00E49D1B /* Debug */,
-				94E65AA420DD721E00E49D1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

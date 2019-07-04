@@ -3,7 +3,7 @@
 //  RxSpriteKit
 //
 //  Created by Daniel Tartaglia on 21 Jan 2019.
-//  Copyright © 2019 Daniel Tartaglia. MIT License.
+//  Copyright (c) RxSwiftCommunity. All rights reserved.
 //
 
 import SpriteKit

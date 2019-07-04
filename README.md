@@ -42,7 +42,8 @@ physicsWorld
 Carthage setup.
 
 ```
-github "maxvol/RxSpriteKit" ~> 0.1.1
+github "RxSwiftCommunity/RxSpriteKit" ~> 0.1.1
 
 ```
 
+Copyright (c) RxSwiftCommunity

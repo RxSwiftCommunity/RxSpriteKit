@@ -12,12 +12,15 @@ import RxSwift
 import RxCocoa
 #endif
 
+@available(iOS 10.0, *)
 public typealias RxSKSceneDelegate = DelegateProxy<SKScene, SKSceneDelegate>
 
+@available(iOS 10.0, *)
 extension SKScene: HasDelegate {
     public typealias Delegate = SKSceneDelegate
 }
 
+@available(iOS 10.0, *)
 open class RxSKSceneDelegateProxy: RxSKSceneDelegate, DelegateProxyType, SKSceneDelegate {
     
     /// Type of parent object

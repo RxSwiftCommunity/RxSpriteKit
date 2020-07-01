@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 #endif
 
+@available(iOS 10.0, *)
 extension Reactive where Base: SKScene {
     
     // MARK: - SKSceneDelegate

@@ -12,6 +12,7 @@ import SpriteKit
 
 // MARK: - SKSceneDelegate
 
+@available(iOS 10.0, *)
 public typealias EventUpdate = (currentTime: TimeInterval, scene: SKScene)
 
 //MARK: - SKPhysicsContactDelegate

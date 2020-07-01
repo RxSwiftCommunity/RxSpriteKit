@@ -16,12 +16,14 @@ import RxCocoa
 
 // MARK: - SKSceneDelegate
 
+@available(iOS 10.0, *)
 func toEventUpdate(_ args: [Any]) throws -> EventUpdate {
     let currentTime = try castOrThrow(TimeInterval.self, args[0])
     let scene = try castOrThrow(SKScene.self, args[1])
     return (currentTime, scene)
 }
 
+@available(iOS 10.0, *)
 func toSKScene(_ args: [Any]) throws -> SKScene {
     let scene = try castOrThrow(SKScene.self, args[0])
     return scene
@@ -29,6 +31,7 @@ func toSKScene(_ args: [Any]) throws -> SKScene {
 
 //MARK: - SKPhysicsContactDelegate
 
+@available(iOS 10.0, *)
 func toSKPhysicsContact(_ args: [Any]) throws -> SKPhysicsContact {
     let contact = try castOrThrow(SKPhysicsContact.self, args[0])
     return contact

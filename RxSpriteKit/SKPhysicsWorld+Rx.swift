@@ -12,6 +12,7 @@ import RxSwift
 import RxCocoa
 #endif
 
+@available(iOS 10.0, *)
 public extension Reactive where Base: SKPhysicsWorld {
     
     public var didBeginContact: Observable<SKPhysicsContact> {

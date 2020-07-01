@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import macOS_RxSpriteKit
+// @testable import macOS_RxSpriteKit
 
 class macOS_RxSpriteKitTests: XCTestCase {
 

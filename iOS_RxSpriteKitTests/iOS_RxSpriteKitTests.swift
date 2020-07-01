@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import iOS_RxSpriteKit
+// @testable import iOS_RxSpriteKit
 
 class iOS_RxSpriteKitTests: XCTestCase {
 

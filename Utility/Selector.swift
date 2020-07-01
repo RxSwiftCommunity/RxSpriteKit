@@ -12,6 +12,7 @@ import SpriteKit
 
 // MARK: - SKSceneDelegate
 
+@available(iOS 10.0, *)
 extension Selector {
     static let update = #selector(SKSceneDelegate.update(_:for:))
     static let didEvaluateActions = #selector(SKSceneDelegate.didEvaluateActions(for:))
@@ -22,6 +23,7 @@ extension Selector {
 
 //MARK: - SKPhysicsContactDelegate
 
+@available(iOS 10.0, *)
 extension Selector {
     static let didBeginContact = #selector(SKPhysicsContactDelegate.didBegin(_:))
     static let didEndContact = #selector(SKPhysicsContactDelegate.didEnd(_:))

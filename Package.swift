@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "RxSpriteKit",
-            targets: ["iOS_RxSpriteKit", "macOS_RxSpriteKit"]),
+            targets: ["RxSpriteKit", "iOS_RxSpriteKit", "macOS_RxSpriteKit"]),
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.1.1")

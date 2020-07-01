@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         .target(
             name: "RxSpriteKit",
-            dependencies: ["RxSwift"], // "RxRelay"],
+            dependencies: ["RxSwift", "RxCocoa"],
             path: "."),
 //        .testTarget(
 //            name: "RxSpriteKitTests",
